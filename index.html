@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js" integrity="sha512-Q1f3TS3vSt1jQ8AwP2OuenztnLU6LwxgyyYOG1jgMW/cbEMHps/3wjvnl1P3WTrF3chJUWEoxDUEjMxDV8pujg==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
 </head>
@@ -17,22 +19,66 @@
         <div class="row">
             <div class="col my-col">
                 <h3>Search:</h3>
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control mr-sm-1" id="search" type="Enter City" placeholder="Search" aria-label="Search"> <!--Seachbar/ city-->
+                <input type="submit" value="Search" id="button" class=""> <!--Search/ button-->
             </div>
-            <div class="col my-col">
-                Weather stuff
+            <div class="col my-col display"> <!--main Display-->
+                <p id="currentDay" class="lead"></p>
+                <h1 id="city"></h1>
+                <div id="temp">Temp</div>
+                <div id="wind">Wind</div>
+                <div id="humidity">Humidity</div>
+                <div id="uvindex">UV Index</div>
             </div>
         </div>
         <div class="row">
-            <div class="col my-col">
-                Prev searches
+            <div class="col-2 my-col"><!--Prev searches-->
+                <div id="prevsearch">Prev searches</div>
             </div>
-            <div class="col my-col">
-                weather cards                              
+            <div class="col-md-2 my-col"><!--Weather cards-->
+                <div class="card" style="width: 8rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Day 1</h5>               
+                      <p class="card-text"></p>                                        
+                    </div>                             
+                </div>
             </div>
+            <div class="col-md-2 my-col"><!--Weather cards-->
+                <div class="card" style="width: 8rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Day 2</h5>               
+                      <p class="card-text"></p>                                        
+                    </div>                             
+                </div>
+            </div>
+            <div class="col-md-2 my-col"><!--Weather cards-->
+                <div class="card" style="width: 8rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Day 3</h5>               
+                      <p class="card-text"></p>                                        
+                    </div>                             
+                </div>
+            </div>  
+            <div class="col-md-2 my-col"><!--Weather cards-->
+                <div class="card" style="width: 8rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Day 4</h5>               
+                      <p class="card-text"></p>                                        
+                    </div>                             
+                </div>
+            </div> 
+            <div class="col-md-2 my-col"><!--Weather cards-->
+                <div class="card" style="width: 8rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Day 5</h5>               
+                      <p class="card-text"></p>                                        
+                    </div>                             
+                </div>
+            </div>                
         </div>
     </main>
 <script src="script.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js" integrity="sha512-Q1f3TS3vSt1jQ8AwP2OuenztnLU6LwxgyyYOG1jgMW/cbEMHps/3wjvnl1P3WTrF3chJUWEoxDUEjMxDV8pujg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>
