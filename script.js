@@ -16,14 +16,19 @@ $("#button").click(function(){
     console.log(response.name);
     console.log($('#city')) 
     cities.push($("#search").val()) //Pushes to Local Storage
+    var addbutton = document.createElement('button');
+    addbutton.setAttribute('class', 'btn btn-secondary active prev');
+    addbutton.textContent = cities ;
+    $("#prevsearch").append(addbutton);
 
-    $("#city").text(response.name);
-    $("#wind").text("Wind Speed:" + response.wind.speed);
-    $("#humidity").text("Humidity:"+response.main.humidity);
+
+    $("#city").text(response.name); //putting text into respected id's
+    $("#wind").text("Wind Speed:" + response.wind.speed+"MPH");
+    $("#humidity").text("Humidity:"+response.main.humidity+"%");
     if (typeof response.main.temp == "number"){
-
+    //calc into °C
     var tempC = (response.main.temp - 273.15);
-    $("#temp").text("Temperature:"+ tempC.toFixed(2));
+    $("#temp").text("Temperature:"+ tempC.toFixed(2)+ "°C");
 
     console.log("Wind Speed: " + response.wind.speed);
         console.log("Humidity: " + response.main.humidity);
@@ -37,5 +42,6 @@ $("#button").click(function(){
     console.log(cities)
 }) 
 })
+
 //call 3pm
 
