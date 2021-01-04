@@ -10,78 +10,107 @@
     <title>Weather App</title>
 </head>
 <body>
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">Weather API</h1>
+<!-- Header-->
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Weather API</h1>
+    </div>
+</div>
+    
+<!--Main container-->
+<main class="container.">
+<!--Weather Search bar-->
+<div class="row">
+<div class="col-3 margin">
+        <div class="card" style="width: 22rem;">
+            <div class="card-body">
+                <h6>Search a City:</h6>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="city-input">
+                    </div>
+                    <button id="search-button" type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Search </button>
+                </form>
+            </div>
         </div>
-      </div>
-    <main class="container-fluid. mycon">
-        <div class="row">
-            <div class="col-4 my-col">
-                <h3>Search:</h3>
-                <input class="form-control mr-sm-1" id="search" type="Enter City" placeholder="Search" aria-label="Search"> <!--Seachbar/ city-->
-                <input type="submit" value="Search" id="button" class="btn btn-secondary active"> <!--Search/ button-->
-            </div>
-            <div class="col my-col display"> <!--main Display-->
-                <p id="currentDay" class="lead"></p>
-                <h1 id="city"></h1>
-                <div id="temp">Temp: </div>
-                <div id="wind">Wind: </div>
-                <div id="humidity">Humidity: </div>
-                <div id="uvindex">UV Index: </div>
-            </div>
+<!--List of prev cities-->
+    <div>
+        <ul id="city-list" class="list-group"></ul>
+    </div>
+</div>
+<!--Main body-->
+<div class="col-7">
+    <div id="current-weather" class='card' style="width: 52rem;">
+        <div class="card-body">
+            <div id="city-date-icon">
+                <span id='city-name'>
+                </span>
+                <span id='current-icon'></span>
+            </div>              
+                <p class="card-text" id="current-temp"></p>
+                <p class="card-text" id="current-humidity"></p>
+                <p class="card-text" id="current-wind"></p>
+                <p class="card-text" id="current-uv"></p>               
         </div>
-        <div class="row">
-            <div class="col-2 my-col"><!--Prev searches-->
-                <div id="prevsearch" class="bold">Prev searches:</div>
-            </div>
-            <div class="col-md-2 my-col"><!--Weather cards-->
-                <div class="card" style="width: 8rem;">
-                    <div class="card-body">
-                      <h5 class="card-title">Data:</h5>               
-                      <p class="card-text">Temp:</p>
-                      <p class="card-text">Humidity:</p>                                          
-                    </div>                             
+    </div>
+    <!--5 / Day forecast-->
+    <div class="row">
+                <div id="forecast-weather" class="col-md-9">
+                    <h4>Your 5 Day Forecast:</h4>
+                    <div id="forecast-cards">
+                        <div class="card forecast">
+                            <div id="forecast1" class="card-body">
+                                <span class="card-title" id='forecast-date1'>
+                                </span>
+                                <span id='forecast-icon1'></span>
+                                <p class="card-text" id="forecast-temp1"></p>
+                                <p class="card-text" id="forecast-humidity1"></p>
+                            </div>
+                        </div>
+                        <div class="card forecast">
+                            <div id="forecast2" class="card-body">
+                                <span class="card-title" id='forecast-date2'>
+                                </span>
+                                <span id='forecast-icon2'></span>
+                                <p class="card-text" id="forecast-temp2"></p>
+                                <p class="card-text" id="forecast-humidity2"></p>
+                            </div>
+                        </div>
+                        <div class="card forecast">
+                            <div id="forecast3" class="card-body">
+                                <span class="card-title" id='forecast-date3'>
+                                </span>
+                                <span id='forecast-icon3'></span>
+                                <p class="card-text" id="forecast-temp3"></p>
+                                <p class="card-text" id="forecast-humidity3"></p>
+                            </div>
+                        </div>
+                        <div class="card forecast">
+                            <div id="forecast4" class="card-body">
+                                <span class="card-title" id='forecast-date4'>
+                                </span>
+                                <span id='forecast-icon4'></span>
+                                <p class="card-text" id="forecast-temp4"></p>
+                                <p class="card-text" id="forecast-humidity4"></p>
+                            </div>
+                        </div>
+                        <div class="card forecast">
+                            <div id="forecast5" class="card-body">
+                                <span class="card-title" id='forecast-date5'>
+                                </span>
+                                <span id='forecast-icon5'></span>
+                                <p class="card-text" id="forecast-temp5"></p>
+                                <p class="card-text" id="forecast-humidity5"></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-2 my-col"><!--Weather cards-->
-                <div class="card" style="width: 8rem;">
-                    <div class="card-body">
-                      <h5 class="card-title">Date:</h5>               
-                      <p class="card-text">Temp:</p>
-                      <p class="card-text">Humidity:</p>                                          
-                    </div>                             
-                </div>
-            </div>
-            <div class="col-md-2 my-col"><!--Weather cards-->
-                <div class="card" style="width: 8rem;">
-                    <div class="card-body">
-                      <h5 class="card-title">Date:</h5>               
-                      <p class="card-text">Temp:</p> 
-                      <p class="card-text">Humidity:</p>                                         
-                    </div>                             
-                </div>
-            </div>  
-            <div class="col-md-2 my-col"><!--Weather cards-->
-                <div class="card" style="width: 8rem;">
-                    <div class="card-body">
-                      <h5 class="card-title">Date:</h5>               
-                      <p class="card-text">Temp:</p>
-                      <p class="card-text">Humidity:</p>                                          
-                    </div>                             
-                </div>
-            </div> 
-            <div class="col-md-2 my-col"><!--Weather cards-->
-                <div class="card" style="width: 8rem;">
-                    <div class="card-body">
-                      <h5 class="card-title">Date:</h5>               
-                      <p class="card-text">Temp:</p> 
-                      <p class="card-text">Humidity:</p>                                         
-                    </div>                             
-                </div>
-            </div>                
-        </div>
-    </main>
+    </div>
+</div>
+</main>
+
+<!--Dependant Script-->
 <script src="script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js" integrity="sha512-Q1f3TS3vSt1jQ8AwP2OuenztnLU6LwxgyyYOG1jgMW/cbEMHps/3wjvnl1P3WTrF3chJUWEoxDUEjMxDV8pujg==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
